@@ -116,7 +116,10 @@ public class ScannerActivity extends AppCompatActivity {
      * For each TextBlock, Line, and Element object, you can get the text recognized in the region and the bounding coordinates of the region.
      */
     private void DetectText() {
+        // Create an InputImage object from either a Bitmap, media.Image, ByteBuffer, byte array, or a file on the device.
+        // Then, pass the InputImage object to the TextRecognizer's processImage method
         InputImage image = InputImage.fromBitmap(bmImage, 0);
+
         TextRecognizer recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
         Task<Text> result =
                 recognizer.process(image)
